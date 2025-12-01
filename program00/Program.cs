@@ -1,15 +1,13 @@
 ﻿using System;
-using binary_converter;
+using Binary_converter;
 
 namespace Program00{
     public class Program00{
         public static int Main(string[] argv){
-            converter Converter = new converter("011031");
-            if(Converter.binary_check()){
-                Console.WriteLine("is Binary");
-            }else{
-                Console.WriteLine("Is not Binary");
-            }
+            Console.WriteLine("Enter Type");
+            Converter Converter = new Converter(int.Parse(Console.ReadLine()));
+            string binary = Converter.convert_to_binary();
+            Console.WriteLine($"Your number: {binary}");
             return 0;
         }
     }
