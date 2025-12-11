@@ -4,6 +4,9 @@ public class Converter{
     private string Binary;
     private int decimal_number;
 
+/// <summary>
+/// reads the binary Number and saves it in Binary
+/// </summary>
     private void read_binary(){
         string ? input = "";
         while(true)
@@ -21,6 +24,10 @@ public class Converter{
         }
         
     }
+    /// <summary>
+    /// the Constructor for this class (reads in a type(1=binary; 2 = Decimal))
+    /// </summary>
+    /// <param name="type">which numbersystem you want to read</param>
     public Converter(int type)
     {
         if(type == 1)
@@ -32,6 +39,10 @@ public class Converter{
         }
     }
 
+/// <summary>
+/// checks if the number is binary
+/// </summary>
+/// <returns>returns true if the number is binary</returns>
     public bool binary_check()
     {
         foreach(char n in Binary)
@@ -44,6 +55,10 @@ public class Converter{
         return true;
     }
 
+/// <summary>
+/// Converts the binary string into a decimal string
+/// </summary>
+/// <returns>The string in decimal</returns>
     public string Convert_to_decimal()
     {
         if(!binary_check()){
@@ -64,6 +79,10 @@ public class Converter{
         decimal_number = cur_decimal;
         return cur_decimal.ToString();
     }
+    /// <summary>
+    /// Converts a decimal into binary
+    /// </summary>
+    /// <returns>the binary number in string</returns>
     public string Convert_to_binary()
     {
         int decimal_clone = decimal_number;
@@ -76,6 +95,20 @@ public class Converter{
         char[] reverse = Binary.ToCharArray();
         Array.Reverse(reverse);
         Binary = new string(reverse);
+        return Binary;
+    }
+/// <summary>
+/// prints the decimal
+/// </summary>
+/// <returns>A string with the decimal number in it</returns>
+    public string print_decimal(){
+        return $"{decimal_number}";
+    }
+/// <summary>
+/// prints the binary
+/// </summary>
+/// <returns>returns a string with the binary in it</returns>
+    public string print_binary(){
         return Binary;
     }
 }
